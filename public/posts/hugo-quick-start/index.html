@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html><head>
+<title>快速搭建hugo博客</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#0%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6" class="nav-0前提条件">
+									0.前提条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#1%e5%88%9b%e5%bb%ba%e7%bd%91%e7%ab%99" class="nav-1创建网站">
+									1.创建网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a" class="nav-命令解释">
+									命令解释
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#2%e6%b7%bb%e5%8a%a0%e5%86%85%e5%ae%b9" class="nav-2添加内容">
+									2.添加内容
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#3%e9%85%8d%e7%bd%ae%e7%ab%99%e7%82%b9" class="nav-3配置站点">
+									3.配置站点
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://pylory.github.io/">
+            Pylory&#39;s Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://pylory.github.io/">
+        <div class="single-column-header-title">Pylory&#39;s Blog</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    快速搭建hugo博客
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-08-14 14:25
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="0前提条件">0.前提条件</h1>
+<ul>
+<li>
+<p><a href="https://git-scm.com/">安装git</a></p>
+</li>
+<li>
+<p><a href="https://github.com/gohugoio/hugo/">安装Hugo</a>（推荐hugo_extended）</p>
+</li>
+</ul>
+<h1 id="1创建网站">1.创建网站</h1>
+<p>在解压后的hugo_extended目录下。</p>
+<pre tabindex="0"><code>hugo new site quickstart
+cd quickstart
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+echo &#34;theme = &#39;ananke&#39;&#34; &gt;&gt; hugo.toml
+hugo server
+</code></pre><h2 id="命令解释">命令解释</h2>
+<p>在目录中为您的项目创建目录<code>quickstart</code>。</p>
+<pre tabindex="0"><code>hugo new site quickstart
+</code></pre><p>跳转到<code>quickstart</code>项目根目录。</p>
+<pre tabindex="0"><code>cd quickstart
+</code></pre><p>在当前目录中初始化一个空的 Git 仓库。</p>
+<pre tabindex="0"><code>git init
+</code></pre><p>将<a href="https://github.com/theNewDynamic/gohugo-theme-ananke">Ananke</a>主题克隆到该目录中，并将其作为Git 子模块themes添加到您的项目中。</p>
+<pre tabindex="0"><code>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+</code></pre><p>在配置文件中添加一行，指向当前主题。</p>
+<pre tabindex="0"><code>echo &#34;theme = &#39;ananke&#39;&#34; &gt;&gt; hugo.toml
+</code></pre><p>启动Hugo的开发服务器来查看站点。</p>
+<pre tabindex="0"><code>hugo server
+</code></pre><p>按Ctrl + C可停止 Hugo 的开发服务器。</p>
+<h1 id="2添加内容">2.添加内容</h1>
+<p>向网站添加新页面。</p>
+<pre tabindex="0"><code>hugo new posts/my-first-post.md
+</code></pre><p>Hugo 在<code>content/posts</code>目录中创建了该文件，使用编辑器打开文件。</p>
+<pre tabindex="0"><code>---
+title: &#34;My First Post&#34;
+date: 2022-11-20T09:03:20-08:00
+draft: true
+---
+</code></pre><p>注意此处<code>draft</code>中的值为<code>true</code>。默认情况下，Hugo 在构建网站时不会发布草稿内容（draft）。</p>
+<p>在帖子正文中添加一些内容，并把<code>draft</code>中的值为<code>false</code>。</p>
+<pre tabindex="0"><code>---
+title: &#34;My First Post&#34;
+date: 2022-11-20T09:03:20-08:00
+draft: true
+---
+## 介绍
+
+你好世界，这是我的第一篇文章。
+
+欢迎访问[Hugo](https://gohugo.io)官方网站!
+</code></pre><p>保存文件，然后启动Hugo的开发服务器来查看站点。</p>
+<pre tabindex="0"><code>hugo server
+</code></pre><p>通过终端中显示的 URL 即可查看站点，通常为<a href="http://localhost:1313/">http://localhost:1313/</a>。</p>
+<h1 id="3配置站点">3.配置站点</h1>
+<p>使用编辑器打开项目根目录中的站点配置文件（hugo.toml）。</p>
+<pre tabindex="0"><code>baseURL = &#39;http://example.org/&#39;
+languageCode = &#39;en-us&#39;
+title = &#39;My New Hugo Site&#39;
+theme = &#39;ananke&#39;
+</code></pre><p><code>baseURL</code>修改为站点网址。</p>
+<p><code>languageCode</code>修改为所在的语言和区域。</p>
+<p><code>title</code>修改为站点标题。</p>
+<p>根据主题设置可能需要添加<code>defaultContentLanguage</code>等配置。</p>
+<p>启动 Hugo 的开发服务器以查看您的更改。</p>
+<pre tabindex="0"><code>hugo server
+</code></pre>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-08-14</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/hello-world/">
+			上回<br>世界，你好！
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://pylory.github.io/">
+    
+        <div class="nav-title">
+            Pylory&#39;s Blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2023 Pylory&#39;s Blog
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#0%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6" class="nav-0前提条件">
+									0.前提条件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#1%e5%88%9b%e5%bb%ba%e7%bd%91%e7%ab%99" class="nav-1创建网站">
+									1.创建网站
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%91%bd%e4%bb%a4%e8%a7%a3%e9%87%8a" class="nav-命令解释">
+									命令解释
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#2%e6%b7%bb%e5%8a%a0%e5%86%85%e5%ae%b9" class="nav-2添加内容">
+									2.添加内容
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#3%e9%85%8d%e7%bd%ae%e7%ab%99%e7%82%b9" class="nav-3配置站点">
+									3.配置站点
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2023 Pylory&#39;s Blog
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

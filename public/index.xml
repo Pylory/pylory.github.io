@@ -1,0 +1,105 @@
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pylory&#39;s Blog</title>
+    <link>https://pylory.github.io/</link>
+    <description>Recent content on Pylory&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Aug 2023 14:25:13 +0800</lastBuildDate>
+    
+        <atom:link href="https://pylory.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>快速搭建hugo博客</title>
+        <link>https://pylory.github.io/posts/hugo-quick-start/</link>
+        <pubDate>Mon, 14 Aug 2023 14:25:13 +0800</pubDate>
+        
+        <guid>https://pylory.github.io/posts/hugo-quick-start/</guid>
+        <description>Pylory&#39;s Blog https://pylory.github.io/posts/hugo-quick-start/ -&lt;h1 id=&#34;0前提条件&#34;&gt;0.前提条件&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34;&gt;安装git&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gohugoio/hugo/&#34;&gt;安装Hugo&lt;/a&gt;（推荐hugo_extended）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1创建网站&#34;&gt;1.创建网站&lt;/h1&gt;
+&lt;p&gt;在解压后的hugo_extended目录下。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo new site quickstart
+cd quickstart
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.toml
+hugo server
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;命令解释&#34;&gt;命令解释&lt;/h2&gt;
+&lt;p&gt;在目录中为您的项目创建目录&lt;code&gt;quickstart&lt;/code&gt;。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo new site quickstart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;跳转到&lt;code&gt;quickstart&lt;/code&gt;项目根目录。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd quickstart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在当前目录中初始化一个空的 Git 仓库。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将&lt;a href=&#34;https://github.com/theNewDynamic/gohugo-theme-ananke&#34;&gt;Ananke&lt;/a&gt;主题克隆到该目录中，并将其作为Git 子模块themes添加到您的项目中。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在配置文件中添加一行，指向当前主题。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动Hugo的开发服务器来查看站点。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按Ctrl + C可停止 Hugo 的开发服务器。&lt;/p&gt;
+&lt;h1 id=&#34;2添加内容&#34;&gt;2.添加内容&lt;/h1&gt;
+&lt;p&gt;向网站添加新页面。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo new posts/my-first-post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Hugo 在&lt;code&gt;content/posts&lt;/code&gt;目录中创建了该文件，使用编辑器打开文件。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+title: &amp;#34;My First Post&amp;#34;
+date: 2022-11-20T09:03:20-08:00
+draft: true
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意此处&lt;code&gt;draft&lt;/code&gt;中的值为&lt;code&gt;true&lt;/code&gt;。默认情况下，Hugo 在构建网站时不会发布草稿内容（draft）。&lt;/p&gt;
+&lt;p&gt;在帖子正文中添加一些内容，并把&lt;code&gt;draft&lt;/code&gt;中的值为&lt;code&gt;false&lt;/code&gt;。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+title: &amp;#34;My First Post&amp;#34;
+date: 2022-11-20T09:03:20-08:00
+draft: true
+---
+## 介绍
+
+你好世界，这是我的第一篇文章。
+
+欢迎访问[Hugo](https://gohugo.io)官方网站!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;保存文件，然后启动Hugo的开发服务器来查看站点。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过终端中显示的 URL 即可查看站点，通常为&lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;3配置站点&#34;&gt;3.配置站点&lt;/h1&gt;
+&lt;p&gt;使用编辑器打开项目根目录中的站点配置文件（hugo.toml）。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;baseURL = &amp;#39;http://example.org/&amp;#39;
+languageCode = &amp;#39;en-us&amp;#39;
+title = &amp;#39;My New Hugo Site&amp;#39;
+theme = &amp;#39;ananke&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;baseURL&lt;/code&gt;修改为站点网址。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;languageCode&lt;/code&gt;修改为所在的语言和区域。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;title&lt;/code&gt;修改为站点标题。&lt;/p&gt;
+&lt;p&gt;根据主题设置可能需要添加&lt;code&gt;defaultContentLanguage&lt;/code&gt;等配置。&lt;/p&gt;
+&lt;p&gt;启动 Hugo 的开发服务器以查看您的更改。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;- https://pylory.github.io/posts/hugo-quick-start/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>世界，你好！</title>
+        <link>https://pylory.github.io/posts/hello-world/</link>
+        <pubDate>Mon, 14 Aug 2023 14:03:19 +0800</pubDate>
+        
+        <guid>https://pylory.github.io/posts/hello-world/</guid>
+        <description>Pylory&#39;s Blog https://pylory.github.io/posts/hello-world/ -&lt;p&gt;欢迎使用WordPress。这是系统自动生成的演示文章。编辑或者删除它，然后开始您的博客！&lt;/p&gt;
+- https://pylory.github.io/posts/hello-world/ - </description>
+        </item>
+    
+    
+  </channel>
+</rss> 
