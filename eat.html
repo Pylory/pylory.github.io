@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃什么？</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .food-container {
+            text-align: center;
+        }
+
+        #food-title {
+            font-size: 24px;
+        }
+        #food-choice {
+            font-size: 24px;
+            color: #3498db;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="food-container">
+    <p id="food-title">今天吃什么呢？</p>
+    <p id="food-choice">点击开始选择食物...</p>
+    <button onclick="startFoodSelection()">开始</button>
+</div>
+  
+<script>
+    // 定义食物列表
+    const foods = [
+        "麻辣烫",
+        "寿司",
+        "汉堡",
+        "面条",
+        "炒饭",
+        "沙拉",
+        "意面",
+        "三明治",
+        "水饺"
+    ];
+  
+    let currentFoodIndex = 0;
+    let intervalId;
+
+    function startFoodSelection() {
+        clearInterval(intervalId);
+        const finalFoodIndex = Math.floor(Math.random() * foods.length);
+        function updateFoodDisplay() {  
+            currentFoodIndex = (currentFoodIndex + 1) % foods.length;
+            if (currentFoodIndex === finalFoodIndex) {
+                clearInterval(intervalId);
+            }
+            document.getElementById('food-choice').textContent = foods[currentFoodIndex];
+        }
+        intervalId = setInterval(updateFoodDisplay, 300);
+    }
+</script>
+
+</body>
+</html>
